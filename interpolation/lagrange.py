@@ -11,7 +11,7 @@ def interpolate(x: np.array, y: np.array, num=100):
     f_interp = []
 
     x_min = np.min(x)
-    x_max = np.max(y)
+    x_max = np.max(x)
 
     x_ar = np.linspace(x_min, x_max, num)
 
@@ -38,8 +38,8 @@ def main():
 
     x_ar, f = interpolate(x, y)
 
+    plt.scatter(x_ar, f, c='blue', label='interpolated')
     plt.scatter(x, y, c='red', label='original data')
-    plt.plot(x_ar, f, c='blue', label='interpolated')
 
     plt.legend()
     plt.show()
